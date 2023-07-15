@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 uuidv4();
 
-import { Container } from './styled'  
+import { container } from './styled'  
 
 function App() {
     const [list, setList] = useState([{ id: uuidv4(), task: 'Tarefa 1' }]);
@@ -15,9 +15,9 @@ function App() {
 function buttonClick() {
     setList([...list, { id: uuidv4(), task: inputTask }])
 }
-//Codigo html ou jsx
+
     return(
-        <div>
+        <container>
             <input onChange={inputChange} placeholder="Tarefa" />
                 <button onClick ={buttonClick}>Adicionar</button>
                     <ul>
@@ -25,7 +25,7 @@ function buttonClick() {
                             <li key={item.id}>{item.task}</li>
                         ))}
                     </ul>
-        </div>
+        </container>
 )
 }                       
 
